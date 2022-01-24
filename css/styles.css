@@ -1,0 +1,118 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	transition: .5s;
+	background: #fff;
+}
+body.active{
+	background: #16141E;
+}
+.grid{
+	display: grid;
+}
+.container{
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+.toggle{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	box-shadow: inset 5px 2px 8px rgba(0,0,0, 0.15);
+	width: 70px;
+	height: 30px;
+	border-radius: 20px;
+}
+.toggle.active{
+	box-shadow: -1px -2px 2px rgba(255,255,255, .3),
+			    1px 0 2px rgba(255,255,255, .4),
+			    inset 2px 0 2px rgba(255, 255, 255, 0.1);
+}
+.toggle span{
+	position: absolute;
+	width: 30px;
+	height: 100%;
+	border-radius: 50%;
+	box-shadow:  inset -1px 1px 5px rgba(0,0,0, 0.18);
+	transform: scale(0.98);
+	transition: .5s transform;
+	display: block;
+	text-align: center;
+	line-height: 30px;
+	color: #333;
+	font-size: 20px;
+}
+.toggle.active span{
+	box-shadow:  0 0 3px 0 rgba(255, 255, 255, .5);
+	transform: translateX(40px);
+	color: #fff;
+}
+.calculator{
+	transition: .3s ;
+	padding: 3rem 2.7rem;
+	background: #CDCAD0;
+	border-radius: .5rem;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+body.active .calculator{
+	background: #121935;
+}
+.display-calculator{
+	padding: 1rem 1rem;
+	box-shadow: 0 0 3px 0 rgba(255, 255, 255, .18),
+				inset -3px -3px 5px rgba(0,0,0, 0.18),
+				3px 3px 5px rgba(0,0,0, 0.18);
+	margin-bottom: 1rem;
+	border-radius: .1rem;
+	background: rgba(0,0,0, .18);
+	transform: scale(0.98);
+}
+.display{
+	padding: .75rem .75rem;
+	border: none;
+	outline: none;
+	text-align: right;
+	background: rgba(0,0,0,.18);
+	border-radius: .2rem;
+	color: #fff;
+}
+.calculator-btns{
+	gap: .75rem;
+	grid-template-columns: repeat(4, 1fr);
+}
+.btn{
+	padding: .8rem .5rem;
+	background: #f1f1f1;
+	border-radius: .3rem;
+	text-align: center;
+	color: #333;
+	font-weight: 700;
+	transition: .3s transform;
+	box-shadow: 2px 3px 5px rgba(0,0,0, 0.18),
+				  1px 5px 4px rgba(0,0,0, 0.15),
+				  inset -4px -5px 2px rgba(0,0,0, 0.18),
+				 2px 5px 2px rgba(0,0,0, 0.18);
+}
+.btn:active{
+	transform: scale(0.95, 0.90);
+}
+.btn-delete{
+	grid-area: 1/1 / 2 / 3;
+	background: #ae1111;
+	color: #fff;
+}
+.btn-equal{
+	background: #0043e2;
+	color: #fff;
+}
+.btn-add{
+	grid-area: 3/4 / 5 / 4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
